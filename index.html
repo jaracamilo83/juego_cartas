@@ -8,9 +8,47 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <header class="titulo">
+        <h1>Blackjack (Juego de 21)</h1>
+    </header>
+    <div class="container">
+         <div class="row text-center">
+            <div class="col mt-2 ">
+                <button class="btn btn-warning">Nuevo juego</button>
+                <button class="btn btn-secondary">Pedir carta</button>
+                <button class="btn btn-danger">Detener</button>
+            </div>
+        </div>
+        <div class="row mt-2" id="jugador">
+        <div class="col ms-2">
+            <div class="d-flex align-items-center encabezado">
+                <h2>Jugador</h2>
+                <img src="assets/img/icons8-person-48.png" />
+            </div>
+            <img src="assets/img/cartas/10C.png" class="carta">    
+            <img src="assets/img/cartas/10C.png" class="carta">  
+            <img src="assets/img/cartas/10C.png" class="carta">  
+            <img src="assets/img/cartas/10C.png" class="carta">  
+        </div>
+    </div>
 
+     <div class="row mt-2" id="maquina">
+        <div class="col ms-2">
+            <div class="d-flex align-items-center encabezado">
+                <h2>Maquina</h2>
+                <img src="assets/img/icons8-robot-94.png" />
+            </div>
+            <img src="assets/img/cartas/10C.png" class="carta">    
+            <img src="assets/img/cartas/10C.png" class="carta">  
+            <img src="assets/img/cartas/10C.png" class="carta">  
+            <img src="assets/img/cartas/10C.png" class="carta">  
+        </div>
+    </div>
+    </div>
+   
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js" type="module"></script>
+    
+
+    <script src="assets/js/app.js" type="module"></script>
 </body>
 </html>
