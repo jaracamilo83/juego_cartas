@@ -33,3 +33,14 @@ const pedirCarta = () => {
 }
 
 let carta = pedirCarta();
+
+console.log(carta.getValor() + carta.getTipo());
+
+let valorCarta = (carta) => {
+    let valor = carta.getValor();
+    return (isNaN(valor)) ? 
+            (valor === 'A') ? 1 : (valor === 'J') ? 11 : (valor === 'Q') ? 12 : 13
+            : parseInt(valor);
+}
+
+console.log(valorCarta(carta));

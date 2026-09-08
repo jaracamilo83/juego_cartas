@@ -19,7 +19,7 @@ export class Baraja{
                 this.#baraja.push(carta);
             }
         }
-        console.log(this.#baraja);
+      
         this.#baraja = _.shuffle(this.#baraja);
     }
 
