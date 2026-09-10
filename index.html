@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack (Juego de 21)</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header class="titulo">
         <h1>Blackjack (Juego de 21)</h1>
     </header>
     <div class="container">
-         <div class="row text-center">
+        <div class="row text-center">
             <div class="col mt-2 ">
-                <button class="btn btn-warning">Nuevo juego</button>
-                <button class="btn btn-secondary">Pedir carta</button>
-                <button class="btn btn-danger">Detener</button>
+                <button id="btnNuevoJuego" class="btn btn-warning">Nuevo juego</button>
+                <button id="btnPedirCarta" class="btn btn-secondary">Pedir carta</button>
+                <button id="btnDetener" class="btn btn-danger">Detener</button>
             </div>
         </div>
-        <div class="row mt-2" id="jugador">
-        <div class="col ms-2">
-            <div class="d-flex align-items-center encabezado">
-                <h2>Jugador</h2>
-                <img src="assets/img/icons8-person-48.png" />
+        <div class="row mt-2" >
+            <div class="col ms-2" id="jugador">
+                <div class="d-flex align-items-center encabezado">
+                    <h2>Jugador - <small>0</small></h2>
+                    <img src="assets/img/icons8-person-48.png" />
+                </div>
+                <!-- <img src="assets/img/cartas/10C.png" class="carta"> -->
             </div>
-            <img src="assets/img/cartas/10C.png" class="carta">    
-            <img src="assets/img/cartas/10C.png" class="carta">  
-            <img src="assets/img/cartas/10C.png" class="carta">  
-            <img src="assets/img/cartas/10C.png" class="carta">  
+        </div>
+
+        <div class="row mt-2" >
+            <div class="col ms-2" id="maquina">
+                <div class="d-flex align-items-center encabezado">
+                    <h2>Maquina - <small>0</small></h2>
+                    <img src="assets/img/icons8-robot-94.png" />
+                </div>
+                <img src="assets/img/cartas/10C.png" class="carta">
+            </div>
         </div>
     </div>
 
-     <div class="row mt-2" id="maquina">
-        <div class="col ms-2">
-            <div class="d-flex align-items-center encabezado">
-                <h2>Maquina</h2>
-                <img src="assets/img/icons8-robot-94.png" />
-            </div>
-            <img src="assets/img/cartas/10C.png" class="carta">    
-            <img src="assets/img/cartas/10C.png" class="carta">  
-            <img src="assets/img/cartas/10C.png" class="carta">  
-            <img src="assets/img/cartas/10C.png" class="carta">  
-        </div>
-    </div>
-    </div>
-    
     <!-- <script src="assets/js/underscore.js"></script> -->
-    <script src="assets/js/app.js" type="module"></script>
+    <script src="assets/js/juego.js" type="module"></script>
 </body>
+
 </html>
