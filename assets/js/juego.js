@@ -33,13 +33,52 @@ let valorCarta = (carta) => {
             (valor === 'A') ? 1 : (valor === 'J') ? 11 : (valor === 'Q') ? 12 : 13
             : parseInt(valor);
 }
+let turnoComputadora = (puntajeMinino) => {
 
-function insertarCarta(carta)
+    do{
+
+        let carta = pedirCarta();
+        let valor = valorCarta(carta);
+        puntajeMaquina += valor;
+        console.log({puntajeMinino, puntajeMaquina});
+        maquina.querySelector('small').textContent = puntajeMaquina;
+        insertarCarta(carta, 'maquina');
+
+        if(puntajeMinino > 21)
+        {
+            console.warn('La computadora gana');
+            break;
+        }
+        
+
+
+    }while(puntajeMaquina < puntajeMinino && puntajeMinino <= 21);
+
+    setTimeout(() => {
+        if(puntajeMaquina > 21){
+            alert('Jugador gana 🤷‍♂️');
+        }
+        else if(puntajeMaquina === puntajeMinino){
+            alert('Empate 🤝');
+        }else{
+            alert("Computadora gana 🤖");
+        }
+    }, 100);
+}
+
+function insertarCarta(carta, turno = 'jugador')
 {
     let imgCarta = document.createElement('img');
     imgCarta.src = `assets/img/cartas/${carta.getValor()}${carta.getTipo()}.png`;
     imgCarta.classList.add('carta');
-    jugador.append(imgCarta);
+    if(turno === 'jugador')
+    {
+        jugador.append(imgCarta);
+    }
+    else
+    {
+        maquina.append(imgCarta);
+    }
 }
 
 
@@ -49,14 +88,36 @@ btnPedirCarta.addEventListener('click', () => {
     puntajeJugador += valor;
   
     jugador.querySelector('small').textContent = puntajeJugador;
-    insertarCarta(carta);
+    insertarCarta(carta, 'jugador');
     if(puntajeJugador > 21)
     {
-        alert('Perdiste');
+        console.log('Perdiste');
         btnPedirCarta.disabled = true;
+        btnDetener.disabled = true;
+        turnoComputadora(puntajeJugador);
     }else if(puntajeJugador === 21)
     {
-        alert('Ganaste');
+        console.log('Ganaste');
         btnPedirCarta.disabled = true;
+        btnDetener.disabled = true;
+        turnoComputadora(puntajeJugador);
     }
+});
+
+btnDetener.addEventListener('click', () => {
+    btnPedirCarta.disabled = true;
+    btnDetener.disabled = true;
+    turnoComputadora(puntajeJugador);
+});
+
+btnNuevoJuego.addEventListener('click', () => {
+    baraja = new Baraja();
+    puntajeJugador = 0;
+    puntajeMaquina = 0;
+    jugador.querySelector('small').textContent = 0;
+    maquina.querySelector('small').textContent = 0;
+    jugador.querySelectorAll('img').forEach(img => { if(img.id !== 'logoJugador') img.remove()});
+    maquina.querySelectorAll('img').forEach(img => {if(img.id !== 'logoMaquina') img.remove()});
+    btnPedirCarta.disabled = false;
+    btnDetener.disabled = false;
 });
